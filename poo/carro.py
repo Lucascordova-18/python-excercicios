@@ -30,7 +30,7 @@ class Carro():
         else:
             print(f"O seu {self.car} precisa estar ligado para funcionar")
 
-    def freiar(self):
+    def frear(self):
         if self.ligar:
             if self.velocidade >= 0:
                 print("Seu carro ja esta fereiando!")
