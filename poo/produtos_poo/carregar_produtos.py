@@ -1,14 +1,12 @@
-from salvar_produtos import Produto
+import json
+from salvar_produtos import files, Produto
 
-produto1 = Produto("Arroz", 12, 4)
-produto2 = Produto("Carne", 86, 14)
-produto3 = Produto("Macarrão", 8, 10)
+produtos_recebido = []
 
-produtos = [produto1, produto2, produto3]
+with open(files, "r") as file:
+    for produto in json.load(file):
+        novo_produto = Produto(**produto)
+        produtos_recebido.append(novo_produto)
 
-dicionario = []
-
-for products in produtos:
-    dicionario.append(products.__dict__)
-
-print(dicionario)
+for produto in produtos_recebido:
+    print(f"Produto: {produto.name}, Preço: {produto.price}, Quantidade: {produto.amount}")
