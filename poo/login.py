@@ -23,7 +23,10 @@ def validador_usuario(email):
 
 entrada_email = input("Input your email: ")
 if validador_usuario(entrada_email) == True:
-    entrada_senha = input("Input your password: ")
+    entrada_senha = input("Input your password")
+
+entrada_senha = input("Input your password: ")
+
 
 
 user = [{
@@ -37,7 +40,7 @@ usuarios_recebidos = []
 with open(arquivo_json, "r") as file:
     for login in json.load(file):
         usuario_recebido = Usuario(**login)
-        usuarios_recebidos.append(usuario_receblido)
+        usuarios_recebidos.append(usuario_recebido)
 
 for usuario in usuarios_recebidos:
     print(f"Email: {usuario.email} \nSenha: {usuario.password}")
